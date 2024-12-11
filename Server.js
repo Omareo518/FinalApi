@@ -37,6 +37,17 @@ app.get('/api/cars', (req, res) => {
     res.json(cars);
   });
   
+// READ: Get a single car by id
+app.get('/api/cars/:id', (req, res) => {
+    const carId = parseInt(req.params.id);
+    const cars = readCarsData();
+    const car = cars.find(c => c.id === carId);
+    if (!car) {
+      return res.status(404).json({ error: "Car not found" });
+    }
+    res.json(car);
+  });
+  
 
 
 
