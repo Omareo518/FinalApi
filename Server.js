@@ -48,7 +48,23 @@ app.get('/api/cars/:id', (req, res) => {
     res.json(car);
   });
   
-
+// UPDATE: Modify an existing car by id
+app.put('/api/cars/:id', (req, res) => {
+    const carId = parseInt(req.params.id);
+    const updatedCar = req.body;
+    const cars = readCarsData();
+    const carIndex = cars.findIndex(c => c.id === carId);
+  
+    if (carIndex === -1) {
+      return res.status(404).json({ error: "Car not found" });
+    }
+  
+    // Update car details
+    cars[carIndex] = { ...cars[carIndex], ...updatedCar };
+    writeCarsData(cars);
+    res.json(cars[carIndex]);
+  });
+  
 
 
 app.listen(PORT, () => {
