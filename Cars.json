@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "make": "Honda",
+      "model": "Accord",
+      "year": 2023
+    },
+    {
+      "id": 2,
+      "make": "Honda",
+      "model": "Civic",
+      "year": 2024
+    },
+    {
+        "id": 3,
+        "make": "BMW",
+        "model": "Series X",
+        "year": 2022
+      }
+  ]
+  
