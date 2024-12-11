@@ -16,6 +16,12 @@
         "make": "BMW",
         "model": "Series X",
         "year": 2022
+      },
+      {
+        "id": 4,
+        "make": "Dodge",
+        "model": "Charger",
+        "year": 2021
       }
   ]
   

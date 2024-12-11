@@ -21,6 +21,7 @@ const writeCarsData = (cars) => {
 };
 
 // CREATE: Add a new car
+//ADDED POST
 app.post('/api/cars', (req, res) => {
   const newCar = req.body;
   const cars = readCarsData();
