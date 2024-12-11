@@ -31,6 +31,13 @@ app.post('/api/cars', (req, res) => {
   res.status(201).json(newCar);
 });
 
+// READ: Get a list of all cars
+app.get('/api/cars', (req, res) => {
+    const cars = readCarsData();
+    res.json(cars);
+  });
+  
+
 
 
 app.listen(PORT, () => {
