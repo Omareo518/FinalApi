@@ -64,6 +64,23 @@ app.put('/api/cars/:id', (req, res) => {
     writeCarsData(cars);
     res.json(cars[carIndex]);
   });
+
+  // DELETE: Remove a car by id
+app.delete('/api/cars/:id', (req, res) => {
+    const carId = parseInt(req.params.id);
+    const cars = readCarsData();
+    const carIndex = cars.findIndex(c => c.id === carId);
+  
+    if (carIndex === -1) {
+      return res.status(404).json({ error: "Car not found" });
+    }
+  
+    // Remove the car
+    cars.splice(carIndex, 1);
+    writeCarsData(cars);
+    res.status(204).send();
+  });
+  
   
 
 
